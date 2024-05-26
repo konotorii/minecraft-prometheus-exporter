@@ -12,8 +12,7 @@ RUN set -Eeux && \
 RUN GOOS=linux GOARCH=amd64 \
     go build \
     -trimpath \
-    -ldflags="-w -s" \
-    -o app cmd/golang-docker-build-tutorial/main.go
+    -o app main.go
 RUN go test -cover -v ./...
 
 ###############################################################################
