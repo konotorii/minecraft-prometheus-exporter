@@ -455,7 +455,7 @@ func (e *Exporter) getPlayerStats(ch chan<- prometheus.Metric) error {
 			if err != nil {
 				return err
 			}
-
+			
 			var data PlayerData
 			_, err = nbt.NewDecoder(r).Decode(&data)
 			if err != nil {
