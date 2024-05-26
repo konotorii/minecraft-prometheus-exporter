@@ -1,5 +1,5 @@
 repos:
-  - repo: https://github.com/dirien/minecraft-prometheus-exporter
+  - repo: https://github.com/konotorii/minecraft-prometheus-exporter
     rev: v0.10.0
     hooks:
       - id: helm-docs
