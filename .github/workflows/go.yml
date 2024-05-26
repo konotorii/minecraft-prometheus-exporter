@@ -26,10 +26,10 @@ jobs:
         go-version: 1.22
 
     - name: Build
-      run: go build -trimpath -ldflags="-w -s -X 'main.Version=$PROJECT_VERSION'" -v ./...
+      run: go build .
 
     - name: Test
-      run: go test -cover -v ./...
+      run: go test -cover -v .
 
   release:
 
