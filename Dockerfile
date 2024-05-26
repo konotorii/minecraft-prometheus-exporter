@@ -12,7 +12,7 @@ RUN set -Eeux && \
 RUN GOOS=linux GOARCH=amd64 \
     go build \
     -trimpath \
-    -o app cmd/minecraftexplorer/main.go
+    -o app cmd/minecraftexporter/main.go
 RUN go test -cover -v ./...
 
 ###############################################################################
