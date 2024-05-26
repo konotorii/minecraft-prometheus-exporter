@@ -28,4 +28,4 @@ FROM scratch
 WORKDIR /root/
 COPY --from=builder /usr/bin/minecraft-exporter .
 
-ENTRYPOINT ["/usr/bin/minecraft-exporter"]
+ENTRYPOINT ["./app"]
