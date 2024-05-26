@@ -445,6 +445,7 @@ func (e *Exporter) getPlayerStats(ch chan<- prometheus.Metric) error {
 	}
 	for _, file := range files {
 		if filepath.Ext(file.Name()) == ".dat" && !strings.Contains(file.Name(), "_cyclic") && !strings.Contains(file.Name(), ".is3") {
+			// I absolutely hate how difficult it is to make this workflow actually make a release.
 			id := strings.TrimSuffix(file.Name(), ".dat")
 			f, err := os.Open(e.world + "/playerdata/" + file.Name())
 			if err != nil {
@@ -455,7 +456,7 @@ func (e *Exporter) getPlayerStats(ch chan<- prometheus.Metric) error {
 			if err != nil {
 				return err
 			}
-			
+
 			var data PlayerData
 			_, err = nbt.NewDecoder(r).Decode(&data)
 			if err != nil {
