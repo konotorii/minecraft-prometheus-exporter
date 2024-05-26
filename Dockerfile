@@ -12,7 +12,8 @@ RUN set -Eeux && \
 RUN GOOS=linux GOARCH=amd64 \
     go build \
     -trimpath \
-    -o app main.go
+    -ldflags="-w -s" \
+    -o app cmd/minecraftexplorer/main.go
 RUN go test -cover -v ./...
 
 ###############################################################################
