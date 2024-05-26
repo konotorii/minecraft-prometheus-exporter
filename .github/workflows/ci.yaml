@@ -39,7 +39,7 @@ jobs:
       packages: write
     needs: build
     runs-on: ubuntu-latest
-    if: success() && startsWith(github.ref, 'refs/tags/')
+    if: success()
     env:
       DOCKER_CLI_EXPERIMENTAL: "enabled"
     steps:
